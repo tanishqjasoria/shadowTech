@@ -157,9 +157,9 @@ void loop(void)
 
 void _print()
 {
-  Serial.print("pitch =");Serial.print(pitch);
-  Serial.print("  roll =");Serial.print(roll);
-  Serial.print("  gyrx =");Serial.print(Data.gyrx);
-  Serial.print("  gyry =");Serial.print(Data.gyry);
-  Serial.print("  gyrz =");Serial.println(Data.gyrz);
+  Serial.print(pitch);
+  Serial.print(" ");Serial.print(roll);
+  Serial.print(" ");Serial.print(Data.gyrx);
+  Serial.print(" ");Serial.print(Data.gyry);
+  Serial.print(" ");Serial.println(Data.gyrz);
 }

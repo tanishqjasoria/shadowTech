@@ -122,10 +122,9 @@ void loop(void)
 
 void _print()
 {
- Serial.print("t1: ");Serial.print(" pit=");Serial.print(thigh1.pitch);Serial.print(" roll=");Serial.print(thigh1.roll);  
- Serial.print("  t2: ");Serial.print(" pit=");Serial.print(thigh2.pitch);Serial.print(" roll=");Serial.print(thigh2.roll);
- Serial.print("  k1: ");Serial.print(" pit=");Serial.print(knee1.pitch);Serial.print(" roll=");Serial.print(knee1.roll);
- Serial.print("  k2: ");Serial.print(" pit=");Serial.print(knee2.pitch);Serial.print(" roll=");Serial.print(knee2.roll);
+ Serial.print(thigh1.pitch);Serial.print(" ");Serial.print(thigh1.roll);Serial.print(" ");
+ Serial.print(thigh2.pitch);Serial.print(" ");Serial.print(thigh2.roll);Serial.print(" ");
+ Serial.print(knee1.pitch);Serial.print(" ");Serial.print(knee1.roll);Serial.print(" ");
+ Serial.print(knee2.pitch);Serial.print(" ");Serial.print(knee2.roll);Serial.print(" ");
  Serial.println(diff);
- Serial.println();
 }
