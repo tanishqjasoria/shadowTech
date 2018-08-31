@@ -125,6 +125,5 @@ void _print()
  Serial.print(thigh1.pitch);Serial.print(" ");Serial.print(thigh1.roll);Serial.print(" ");
  Serial.print(thigh2.pitch);Serial.print(" ");Serial.print(thigh2.roll);Serial.print(" ");
  Serial.print(knee1.pitch);Serial.print(" ");Serial.print(knee1.roll);Serial.print(" ");
- Serial.print(knee2.pitch);Serial.print(" ");Serial.print(knee2.roll);Serial.print(" ");
- Serial.println(diff);
+ Serial.print(knee2.pitch);Serial.print(" ");Serial.print(knee2.roll);Serial.println(" ");
 }
