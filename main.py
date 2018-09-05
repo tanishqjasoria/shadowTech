@@ -91,7 +91,6 @@ def arduinoRead(port):
         except:
             print("This Line not processed")
             continue
-        print(t1)
         try:
             t1 = inv.getLeftHip(t1)
             t2 = inv.getRightHip(t2)
