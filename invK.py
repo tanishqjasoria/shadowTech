@@ -2,7 +2,7 @@ import math
 
 pressh =52.85379
 
-psh = 26.2 6848
+psh = 26.26848
 qsh = 154.1493
 lsh = 170.8741
 ssh = math.sqrt(pressh**2 + 400)
@@ -40,7 +40,7 @@ def getRightHip(alphartipr):
 #left hip
 def getLeftHip(alphaltipr):
 	#alphaltipr=90
-	Dltipr=math.sqrt(sth**2+lth**2-2*sth*lth*math.cos(alphaltipr*math.pi/180))
+	Dltipr=math.sqrt( sth**2 + lth**2 - 2 * sth * lth * math.cos(alphaltipr*math.pi/180))
 	alphacltipr=(math.acos((Dltipr**2+pth**2-qth**2)/(2*Dltipr*pth))+math.acos((Dltipr**2+sth**2-lth**2)/(2*Dltipr*sth)))*180/math.pi
 	thetareltipr=3*alphacltipr
 	print(thetareltipr)
