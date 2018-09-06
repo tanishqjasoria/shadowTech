@@ -85,24 +85,24 @@ def arduinoRead(port):
             print("INDV")
             print(t1, end=' ')
             print(t2, end=' ')
-            print(k1, end=' ') 
+            print(k1, end=' ')
             print(k2)
             print("indv end")
         except:
             print("This Line not processed")
             continue
         try:
-            t1 = inv.getLeftHip(t1)
-            t2 = inv.getRightHip(t2)
-            k1 = inv.getLeftKnee(k1)
-            k2 = inv.getRightKnee(k2)
+            t1 = inv.getLeftHip(t1) - 544.7462849003102
+            t2 = inv.getRightHip(t2) - 544.7462849003102
+            k1 = inv.getLeftKnee(k1) - 288.5185921120647
+            k2 = inv.getRightKnee(k2) - 288.5185921120647a
         except:
             print("Error")
             continue
         print("INVK")
         print(t1, end=' ')
         print(t2, end=' ')
-        print(k1, end=' ') 
+        print(k1, end=' ')
         print(k2)
         print("invk end")
 """         try:
