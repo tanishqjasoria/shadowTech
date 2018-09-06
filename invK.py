@@ -25,7 +25,7 @@ def getRightKnee(alpharsipr):
 	Drsipr=math.sqrt(sshsipr**2+lsh**2-2*sshsipr*lsh*math.cos(alphacrsiprex+alpharsipr*math.pi/180))
 	alphacrsipr=(math.acos((Drsipr**2+psh**2-qsh**2)/(2*Drsipr*psh))+math.acos((Drsipr**2+sshsipr**2-lsh**2)/(2*Drsipr*sshsipr)))*180/math.pi
 	thetarersipr=3*(alphacrsipr+alphacrsiprex*180/math.pi)
-	print(thetarersipr)
+	#print(thetarersipr)
 	return thetarersipr
 
 #right hip
@@ -34,7 +34,7 @@ def getRightHip(alphartipr):
 	Drtipr=math.sqrt(sth**2+lth**2-2*sth*lth*math.cos(alphartipr*math.pi/180))
 	alphacrtipr=(math.acos((Drtipr**2+pth**2-qth**2)/(2*Drtipr*pth))+math.acos((Drtipr**2+sth**2-lth**2)/(2*Drtipr*sth)))*180/math.pi
 	thetarertipr=3*alphacrtipr
-	print(thetarertipr)
+	#print(thetarertipr)
 	return thetarertipr
 
 #left hip
@@ -43,7 +43,7 @@ def getLeftHip(alphaltipr):
 	Dltipr=math.sqrt( sth**2 + lth**2 - 2 * sth * lth * math.cos(alphaltipr*math.pi/180))
 	alphacltipr=(math.acos((Dltipr**2+pth**2-qth**2)/(2*Dltipr*pth))+math.acos((Dltipr**2+sth**2-lth**2)/(2*Dltipr*sth)))*180/math.pi
 	thetareltipr=3*alphacltipr
-	print(thetareltipr)
+	#print(thetareltipr)
 	return thetareltipr
 
 #left knee
@@ -60,5 +60,5 @@ def getLeftKnee(alphalsipr):
 	Dlsipr=math.sqrt(lssshsipr**2+lsh**2-2*lssshsipr*lsh*math.cos(alphaclsiprex+alphalsipr*math.pi/180))
 	alphaclsipr=(math.acos((Dlsipr**2+psh**2-qsh**2)/(2*Dlsipr*psh))+math.acos((Dlsipr**2+lssshsipr**2-lsh**2)/(2*Dlsipr*lssshsipr)))*180/math.pi
 	thetarelsipr=3*(alphaclsipr+alphaclsiprex*180/math.pi)
-	print(thetarelsipr)
+	#print(thetarelsipr)
 	return thetarelsipr
