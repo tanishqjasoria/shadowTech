@@ -149,21 +149,17 @@ void loop(void)
 
 void print_shadow()
 {
-// Serial.print(thigh1.pitch);Serial.print(",");
-// Serial.print(thigh2.pitch);Serial.print(",");
-// Serial.print(knee1.pitch);Serial.print(",");
-// Serial.println(knee2.pitch);
- Serial.print(89);Serial.print(",");
- Serial.print(89);Serial.print(",");
+ Serial.print(thigh1.pitch);Serial.print(",");
+ Serial.print(thigh2.pitch);Serial.print(",");
  Serial.print(knee1.pitch);Serial.print(",");
- Serial.println(89);
+ Serial.println(knee2.pitch);
 }  
 void _print()
 {
- Serial.print("t1: ");Serial.print(" pit=");Serial.print(thigh1.pitch);Serial.print(" roll=");Serial.print(thigh1.roll);  
- Serial.print("  t2: ");Serial.print(" pit=");Serial.print(thigh2.pitch);Serial.print(" roll=");Serial.print(thigh2.roll);
- Serial.print("  k1: ");Serial.print(" pit=");Serial.print(knee1.pitch);Serial.print(" roll=");Serial.print(knee1.roll);
- Serial.print("  k2: ");Serial.print(" pit=");Serial.print(knee2.pitch);Serial.print(" roll=");Serial.print(knee2.roll);
+ Serial.print("t1: ");Serial.print(" pit=");Serial.print(thigh1.roll);Serial.print(" roll=");Serial.print(thigh1.roll);  
+ Serial.print("  t2: ");Serial.print(" pit=");Serial.print(thigh2.roll);Serial.print(" roll=");Serial.print(thigh2.roll);
+ Serial.print("  k1: ");Serial.print(" pit=");Serial.print(knee1.roll);Serial.print(" roll=");Serial.print(knee1.roll);
+ Serial.print("  k2: ");Serial.print(" pit=");Serial.print(knee2.roll);Serial.print(" roll=");Serial.print(knee2.roll);
  //Serial.print("  a1: ");Serial.print(" pit=");Serial.print(ankle1.pitch);Serial.print(" roll=");Serial.print(ankle1.roll);Serial.print("\tF1 =");Serial.print(ankle1.forceSens6);Serial.print("\tF2 =");Serial.print(ankle1.forceSens7);Serial.print("\tF3 =");Serial.println(ankle1.forceSens8);//Serial.print("\tF4 =");Serial.print(Data.forceSens4);Serial.print("\tF5 =");Serial.println(Data.forceSens5);
  //Serial.print("  a2: ");Serial.print(" pit=");Serial.print(ankle2.pitch);Serial.print(" roll=");Serial.print(ankle2.roll);Serial.print("\tF1 =");Serial.print(ankle2.forceSens6);Serial.print("\tF2 =");Serial.print(ankle2.forceSens7);Serial.print("\tF3 =");Serial.print(ankle2.forceSens8);//Serial.print("\tF4 =");Serial.print(ankle2.forceSens4);Serial.print("\tF5 =");Serial.println(ankle2.forceSens5);
  Serial.print("  T: ");Serial.print(" pit=");Serial.print(pitch);Serial.print(" roll=");Serial.print(roll);Serial.print("  time");Serial.println(diff);

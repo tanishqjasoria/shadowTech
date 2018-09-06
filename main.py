@@ -92,6 +92,8 @@ def arduinoRead(port):
             print("This Line not processed")
             continue
         try:
+            t2 = 89
+            k2 = 89
             t1 = inv.getLeftHip(t1) - 544.7462849003102
             t2 = inv.getRightHip(t2) - 544.7462849003102
             k1 = inv.getLeftKnee(k1) - 288.5185921120647
