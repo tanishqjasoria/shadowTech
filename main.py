@@ -5,7 +5,7 @@ import invK as inv
 port1 = ""
 port2 = ""
 address = 0x80
-port = '/dev/ttyUSB0'
+port = '/dev/ttyACM1'
 
 """def initOutput(outputFile)
     file = open(outputFile, "r+")
@@ -72,11 +72,11 @@ def arduinoRead(port):
     box = serial.Serial(port, 115200)
     while True:
         x=box.readline()
-        x = x.decode("utf-8")
-        print("Input")
-        print(x)
-        print("input end")
         try:
+            x = x.decode("utf-8")
+            print("Input")
+            print(x)
+            print("input end")
             data = x.split(',')
             t1 = float(data[0])
             t2 = float(data[1])
@@ -95,7 +95,7 @@ def arduinoRead(port):
             t1 = inv.getLeftHip(t1) - 544.7462849003102
             t2 = inv.getRightHip(t2) - 544.7462849003102
             k1 = inv.getLeftKnee(k1) - 288.5185921120647
-            k2 = inv.getRightKnee(k2) - 288.5185921120647a
+            k2 = inv.getRightKnee(k2) - 288.5185921120647
         except:
             print("Error")
             continue
