@@ -3,31 +3,23 @@ import time
 from roboclaw import Roboclaw
 import invK as inv
 port1 = ""
-port2 = ""
+port2 = '/dev/ttyACM1'
 address = 0x80
-port = '/dev/ttyACM1'
-
-"""def initOutput(outputFile)
-    file = open(outputFile, "r+")
+port = '/dev/ttyACM2'
+t10 = 0
+k10 = 0
+beta = 0.2
+outputFile = "data.txt"
+"""def initOutput()
+    
     print "Name of the file: ", fo.name
     print "Closed or not : ", fo.closed
     print "Opening mode : ", fo.mode
     print "Softspace flag : ", fo.softspace
-    return file
+    return file"""
 
 
-def roboclawInit(port1, port2):
-    rc1 = Roboclaw(port1 ,115200)
-    rc2 = Roboclaw(port2 ,115200)
-    rc1.Open()
-    rc2.Open()
-    rc1.SpeedAccelDeccelPositionM1(address,0,0,0,0,0)
-    rc1.SpeedAccelDeccelPositionM2(address,0,0,0,0,0)
-    rc2.SpeedAccelDeccelPositionM1(address,0,0,0,0,0)
-    rc2.SpeedAccelDeccelPositionM2(address,0,0,0,0,0)
-
-
-def displayspeed1(ti1):
+"""def displayspeed1(ti1):
     enc1 = rc1.ReadEncM1(address)
     enc2 = rc1.ReadEncM2(address)
     enc3 = rc2.ReadEncM1(address)
@@ -68,26 +60,33 @@ def displayspeed1(ti1):
         print "failed " ,
 """
 
-def arduinoRead(port):
+def arduinoRead(port,port2):
+    f = open(outputFile, "r+")
+    rc = Roboclaw(port2 ,115200)
+    rc.Open()
+    rc.SpeedAccelDeccelPositionM1(address,0,0,0,0,0)
+    rc.SpeedAccelDeccelPositionM2(address,0,0,0,0,0)
+    t10 = 0
+    k10 = 0
     box = serial.Serial(port, 115200)
     while True:
         x=box.readline()
         try:
             x = x.decode("utf-8")
-            print("Input")
-            print(x)
-            print("input end")
+            #print("Input")
+           # print(x)
+            #print("input end")
             data = x.split(',')
             t1 = float(data[0])
             t2 = float(data[1])
             k1 = float(data[2])
             k2 = float(data[3])
-            print("INDV")
-            print(t1, end=' ')
-            print(t2, end=' ')
-            print(k1, end=' ')
+            #print("INDV")
+            print(t1),
+            print(t2),
+            print(k1),
             print(k2)
-            print("indv end")
+            #print("indv end")
         except:
             print("This Line not processed")
             continue
@@ -95,24 +94,32 @@ def arduinoRead(port):
             t2 = 89
             k2 = 89
             t1 = inv.getLeftHip(t1) - 544.7462849003102
+        except:
+            print("t1")
+        try:
             t2 = inv.getRightHip(t2) - 544.7462849003102
             k1 = inv.getLeftKnee(k1) - 288.5185921120647
             k2 = inv.getRightKnee(k2) - 288.5185921120647
+
         except:
-            print("Error")
+            print("k1")
             continue
-        print("INVK")
-        print(t1, end=' ')
-        print(t2, end=' ')
-        print(k1, end=' ')
+        #print("INVK")
+        f.write(str(t1))
+        f.write(',')
+        f.write(str(k1))
+        f.write('\n')
+        print(t1),
+        print(t2),
+        print(k1),
         print(k2)
-        print("invk end")
-"""         try:
-                rc1.SpeedAccelDeccelPositionM1(address,0,0,0,int(-(k2/360)*2000),0)
-                rc1.SpeedAccelDeccelPositionM2(address,0,0,0,int(-(t2/360)*2000),0)
-                rc2.SpeedAccelDeccelPositionM1(address,0,0,0,int((t1/360)*2000),0)
-                rc2.SpeedAccelDeccelPositionM2(address,0,0,0,int((k1/360)*2000),0)
-            except:
-                print("Error rotating motor")
-"""
-arduinoRead(port)
+        #print("invk end")
+        try:
+            #rc1.SpeedAccelDeccelPositionM1(address,0,0,0,int(-(k2/360)*2000),0)
+            #rc1.SpeedAccelDeccelPositionM2(address,0,0,0,int(-(t2/360)*2000),0)
+            rc.SpeedAccelDeccelPositionM1(address,0,0,0,-int((t1/360)*2000),0)
+            rc.SpeedAccelDeccelPositionM2(address,0,0,0,-int((k1/360)*2000),0)
+        except:
+            print("Error rotating motor")
+
+arduinoRead(port,port2)
