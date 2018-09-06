@@ -9,7 +9,7 @@ sth = 99.63802
 pth = 39.23936
 qth = 195.3119
 lth = 138.6887
-alpharsipr=89
+alpharsipr=90
 VHRShsipr = 20*math.sin(math.pi/2 - alpharsipr*math.pi/180)
 print(VHRShsipr)
 VHRSvsipr = 20- 20*math.cos(math.pi/2-alpharsipr*math.pi/180)
