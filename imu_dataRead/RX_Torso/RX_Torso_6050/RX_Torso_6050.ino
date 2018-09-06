@@ -149,10 +149,10 @@ void loop(void)
 
 void print_shadow()
 {
- Serial.print(thigh1.pitch);Serial.print(",");
- Serial.print(thigh2.pitch);Serial.print(",");
- Serial.print(knee1.pitch);Serial.print(",");
- Serial.println(knee2.pitch);
+ Serial.print(180- thigh1.roll);Serial.print(",");
+ Serial.print(180 - thigh2.roll);Serial.print(",");
+ Serial.print(180 - knee1.roll);Serial.print(",");
+ Serial.println(180 - knee2.roll);
 }  
 void _print()
 {
